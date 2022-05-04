@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
-import { LocationSearch } from "./components/LocationSearch";
-import { LocationTable } from "./components/LocationTable";
+import { LocationSearch } from "./LocationSearch";
+import { LocationTable } from "./LocationTable";
 
 function App() {
    const [locations, setLocations] = useState<string[]>([]);
