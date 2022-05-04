@@ -1,4 +1,4 @@
-import React, { useState, FC } from "react";
+import React, { FC, useState } from "react";
 
 interface LocationSearchProps {
    onSearch: (search: string) => void;
@@ -16,7 +16,7 @@ export const LocationSearch: FC<LocationSearchProps> = ({ onSearch }) => {
    return (
       <div>
          <label>
-            Add Location{" "}
+            Add Location
             <input
                className="ml-1 mr-1"
                type="text"

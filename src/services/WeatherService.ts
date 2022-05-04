@@ -1,6 +1,5 @@
 import { WeatherLocation } from "../model/Weather";
 
-// environment variable must begin with REACT_APP_ and can be read in from process.env ; supported by react-scripts
 const key: string = process.env.REACT_APP_OPEN_WEATHER_API_KEY as string;
 if (key === undefined) {
    throw new Error(
