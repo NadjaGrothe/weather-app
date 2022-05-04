@@ -1,35 +1,22 @@
 import React, { useState } from "react";
 import "./App.css";
+import { LocationSearch } from "./components/LocationSearch";
 
 function App() {
-   const [locationSearch, setLocationSearch] = useState("");
    const [locations, setLocations] = useState<string[]>([]);
 
-   const disableSearch = locationSearch.trim() === "";
-   const addLocation = () => {
-      setLocations([locationSearch, ...locations]);
-   };
+   const addLocation = (location: string) =>
+      setLocations([location, ...locations]);
 
    return (
-      <div className="App">
+      <div className="container">
          <h1>Weather App</h1>
-         <div>
-            <label>
-               Add Location{" "}
-               <input
-                  type="text"
-                  value={locationSearch}
-                  onChange={(e) => setLocationSearch(e.target.value)}
-               />
-            </label>
-            <button onClick={addLocation} disabled={disableSearch}>
-               Search
-            </button>
-         </div>
+
+         <LocationSearch onSearch={addLocation} />
 
          <div>
             <h2>Locations</h2>
-            <table>
+            <table className="table table-hover">
                <thead>
                   <tr>
                      <th>Name</th>
